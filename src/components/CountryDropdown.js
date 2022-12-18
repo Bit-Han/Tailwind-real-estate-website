@@ -16,7 +16,7 @@ const CountryDropdown = () => {
 
   const { country, setCountry, countries } = useContext(HouseContext);
 
-  console.log(countries);
+  //console.log(countries);
 
 
   const [isOpen, setIsOpen] = useState(false);
