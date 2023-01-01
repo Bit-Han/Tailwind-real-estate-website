@@ -31,7 +31,7 @@ const PropertyDetails = () => {
         </div>
         <div className='text-3xl font-semibold text-blue-600'> $ {house.price}</div>
       </div>
-      <div className='flex flex-col items-start gsp-8 lg:flex-row'>
+      <div className='flex flex-col items-start gap-8 lg:flex-row'>
         <div className=' max-w-[768px]'>
           <div className='mb-8'>
             <img src={house.imageLg} alt="houses" />
@@ -52,13 +52,29 @@ const PropertyDetails = () => {
           </div>
           <div>{house.description}</div>
         </div>
-        <div>
-          <div>
-            <div>
+        <div className='flex-1 bg-white-100 w-full mb-8 border border-gray-300 rounded-lg px-6 py-8' >
+          <div className='flex items-center gap-x-4 mb-8'>
+            <div className='w-20 h-20 p-1 border border-gray-300 rounded-full'>
               <img src={house.agent.image} alt="houseagent" />
             </div>
-            <div></div>
+            <div>
+              <div className='font-bold text-lg'>{house.agent.name}</div>
+              <Link to=" " className='text-blue-700 text-sm'>View Listings </Link>
+            </div>
           </div>
+          {/* form */}
+
+          <form className='flex flex-col gap-y-4'>
+            <input className='border border-gray-300 focus:border-blue-700 outline-none rounded w-full px-4 h-14 text-sm' type="text" placeholder='Name* ' />
+            <input className='border border-gray-300 focus:border-blue-700 outline-none rounded w-full px-4 h-14 text-sm' type="text" placeholder='Email* ' />
+            <input className='border border-gray-300 focus:border-blue-700 outline-none rounded w-full px-4 h-14 text-sm' type="text" placeholder='Phone * ' />
+            <textarea className='border border-gray-300 focus:border-blue-700 outline-none resize-none rounded w-full p-4 h-36 text-sm text-gray-400' placeholder='Message* '
+              defaultValue="Hello, i am interested in [any Modern apartment or house available] " ></textarea>
+            <div className='flex gap-x-2'>
+              <button className='bg-blue-700 hover:bg-blue-800 text-white rounded p-4 text-sm w-full transition'>Send Message</button>
+              <button className='border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500 rounded p-4 text-sm w-full transition'>Call</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
